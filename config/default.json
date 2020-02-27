@@ -1,0 +1,8 @@
+{
+
+    "mongoURI": "mongodb+srv://test:test@cluster0-xqntx.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "tuviejactm"
+}
+
+
+
