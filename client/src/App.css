@@ -239,7 +239,7 @@
 .form input[type="email"],
 .form input[type="date"],
 .form input[type="password"],
-.form select,
+.form input[type="url"] .form select,
 .form textarea {
   display: block;
   width: 100%;

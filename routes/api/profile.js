@@ -84,8 +84,9 @@ router.post(
     const socialfields = { youtube, twitter, instagram, linkedin, facebook };
 
     for (const [key, value] of Object.entries(socialfields)) {
-      if (value.length > 0)
+      if (value && value.length > 0)
         socialfields[key] = normalize(value, { forceHttps: true });
+      console.log(value);
     }
     profileFields.social = socialfields;
 
