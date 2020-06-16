@@ -109,9 +109,32 @@ router.post(
 // @desc     Get all profiles
 // @access   Public
 router.get("/", async (req, res) => {
+  let query;
+  const reqQuery = { ...req.query };
+  const removeFields = ["select", "sort", "limit"];
+
+  removeFields.forEach(index => delete reqQuery[index]);
+
+  let queryStr = JSON.stringify(reqQuery);
+
+  queryStr = queryStr.replace(
+    /\b(gt|gte|lt|lte|in|regex|options)\b/g,
+    match => `$${match}`
+  );
+  query = Profile.find(JSON.parse(queryStr)).populate("user", [
+    "name",
+    "avatar"
+  ]);
+
+  if (req.query.select) {
+    const fields = req.query.select.split(",").join(" ");
+    query = query.select(fields);
+  }
+
   try {
-    const profiles = await Profile.find().populate("user", ["name", "avatar"]);
-    res.json(profiles);
+    const profiles = await query;
+
+    res.status(200).json(profiles);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");

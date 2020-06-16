@@ -48,14 +48,14 @@ const CreateProfile = ({ createProfile, history }) => {
   return (
     <Fragment>
       {" "}
-      <h1 class="large text-primary">Create Your Profile</h1>
-      <p class="lead">
-        <i class="fas fa-user"></i>
+      <h1 className="large text-primary">Create Your Profile</h1>
+      <p className="lead">
+        <i className="fas fa-user"></i>
         Let's get some information to make your profile stand up
       </p>
       <small> * = required fields</small>
-      <form onSubmit={e => onSubmit(e)} class="form">
-        <div class="form-group">
+      <form onSubmit={e => onSubmit(e)} className="form">
+        <div className="form-group">
           <select name="status" value={status} onChange={e => onChange(e)}>
             <option value="0">* Select Professional Status</option>
             <option value="Developer">Developer</option>
@@ -67,11 +67,11 @@ const CreateProfile = ({ createProfile, history }) => {
             <option value="Intern">Intern</option>
             <option value="Other">Other</option>
           </select>
-          <small class="form-text">
+          <small className="form-text">
             Give us an idea of where you are at your career
           </small>
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <input
             type="text"
             placeholder="Company"
@@ -79,12 +79,12 @@ const CreateProfile = ({ createProfile, history }) => {
             value={company}
             onChange={e => onChange(e)}
           />
-          <small class="form-text">
+          <small className="form-text">
             Could be your own company or one you work for
           </small>
         </div>
 
-        <div class="form-group">
+        <div className="form-group">
           <input
             type="text"
             placeholder="Website"
@@ -92,12 +92,12 @@ const CreateProfile = ({ createProfile, history }) => {
             value={website}
             onChange={e => onChange(e)}
           />
-          <small class="form-text">
+          <small className="form-text">
             Could be your own or a company website
           </small>
         </div>
 
-        <div class="form-group">
+        <div className="form-group">
           <input
             type="text"
             placeholder="Location"
@@ -105,12 +105,12 @@ const CreateProfile = ({ createProfile, history }) => {
             value={location}
             onChange={e => onChange(e)}
           />
-          <small class="form-text">
+          <small className="form-text">
             City & state suggested (eg. Boston, MA)
           </small>
         </div>
 
-        <div class="form-group">
+        <div className="form-group">
           <input
             type="text"
             placeholder="Skills"
@@ -118,12 +118,12 @@ const CreateProfile = ({ createProfile, history }) => {
             value={skills}
             onChange={e => onChange(e)}
           />
-          <small class="form-text">
+          <small className="form-text">
             Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
           </small>
         </div>
 
-        <div class="form-group">
+        <div className="form-group">
           <input
             type="text"
             placeholder="Github Username"
@@ -131,13 +131,13 @@ const CreateProfile = ({ createProfile, history }) => {
             value={githubusername}
             onChange={e => onChange(e)}
           />
-          <small class="form-text">
+          <small className="form-text">
             If you want your latest repos and a Github link, include your
             username
           </small>
         </div>
 
-        <div class="form-group">
+        <div className="form-group">
           <input
             type="text"
             placeholder="A short bio of yourself"
@@ -145,14 +145,14 @@ const CreateProfile = ({ createProfile, history }) => {
             value={bio}
             onChange={e => onChange(e)}
           />
-          <small class="form-text">Tell us a little about yourself</small>
+          <small className="form-text">Tell us a little about yourself</small>
         </div>
 
-        <div class="my-2">
+        <div className="my-2">
           <button
             onClick={() => toggleSocialInputs(!displaySocialInputs)}
             type="button"
-            class="btn btn-light"
+            className="btn btn-light"
           >
             Add Social Newtworks Links
           </button>
@@ -161,8 +161,8 @@ const CreateProfile = ({ createProfile, history }) => {
 
         {displaySocialInputs && (
           <Fragment>
-            <div class="form-group social-input">
-              <i class="fab fa-twitter fa-2x"></i>
+            <div className="form-group social-input">
+              <i className="fab fa-twitter fa-2x"></i>
               <input
                 type="url"
                 placeholder="Twitter URL"
@@ -172,8 +172,8 @@ const CreateProfile = ({ createProfile, history }) => {
               />
             </div>
 
-            <div class="form-group social-input">
-              <i class="fab fa-facebook fa-2x"></i>
+            <div className="form-group social-input">
+              <i className="fab fa-facebook fa-2x"></i>
               <input
                 type="url"
                 placeholder="Facebook URL"
@@ -183,8 +183,8 @@ const CreateProfile = ({ createProfile, history }) => {
               />
             </div>
 
-            <div class="form-group social-input">
-              <i class="fab fa-youtube fa-2x"></i>
+            <div className="form-group social-input">
+              <i className="fab fa-youtube fa-2x"></i>
               <input
                 type="url"
                 placeholder="Youtube URL"
@@ -194,8 +194,8 @@ const CreateProfile = ({ createProfile, history }) => {
               />
             </div>
 
-            <div class="form-group social-input">
-              <i class="fab fa-linkedin fa-2x"></i>
+            <div className="form-group social-input">
+              <i className="fab fa-linkedin fa-2x"></i>
               <input
                 type="url"
                 placeholder="Linkedin URL"
@@ -205,8 +205,8 @@ const CreateProfile = ({ createProfile, history }) => {
               />
             </div>
 
-            <div class="form-group social-input">
-              <i class="fab fa-instagram fa-2x"></i>
+            <div className="form-group social-input">
+              <i className="fab fa-instagram fa-2x"></i>
               <input
                 type="url"
                 placeholder="Instagram URL"
@@ -218,8 +218,8 @@ const CreateProfile = ({ createProfile, history }) => {
           </Fragment>
         )}
 
-        <input type="submit" class="btn btn-primary my-1" value="Save" />
-        <a href="dashboard.html" class="btn btn-light my-1">
+        <input type="submit" className="btn btn-primary my-1" value="Save" />
+        <a href="dashboard.html" className="btn btn-light my-1">
           Go Back
         </a>
       </form>

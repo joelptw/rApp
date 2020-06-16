@@ -7,6 +7,8 @@ import Spinner from "../layout/Spiner";
 import DashboardActions from "./DashboardActions";
 import Experience from "./Experience";
 import Education from "./Education";
+import firebase from "firebase";
+import config from "../../utils/firebase-init";
 
 const Dashboard = ({
   getCurrentProfile,
@@ -17,6 +19,25 @@ const Dashboard = ({
   useEffect(() => {
     getCurrentProfile();
   }, [getCurrentProfile]);
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(config);
+  }
+
+  const messaging = firebase.messaging();
+
+  messaging
+    .requestPermission()
+    .then(function() {
+      console.log("tiene permiso");
+      return messaging.getToken();
+    })
+    .then(function(token) {
+      console.log(token);
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
 
   return loading && profile === null ? (
     <Spinner />
